@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8e8f3">
+
+    <title>Noor & Douaa | نور قلبي ودعاء 🌸</title>
+
+    <link rel="stylesheet" href="noor.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .main-section {
+            display: none;
+        }
+
+        .main-section.active {
+            display: block;
+        }
+
+        .app-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px;
+            background: #fff0f7;
+        }
+
+        .app-switcher button {
+            min-width: 145px;
+            background: linear-gradient(120deg, #e99bbd, #a99ad9);
+            color: white;
+            font-size: 16px;
+        }
+
+        .app-switcher button:hover {
+            filter: brightness(1.05);
+        }
+
+        .douaa-navigation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 25px auto;
+        }
+
+        .douaa-content {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 20px;
+            min-height: 250px;
+        }
+
+        .douaa-welcome {
+            background: linear-gradient(135deg, #fff0f7, #f1edff);
+            border-radius: 25px;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        .welcome-icon {
+            font-size: 55px;
+        }
+
+        .douaa-welcome h2 {
+            color: #bd7099;
+            margin: 15px;
+        }
+
+        .douaa-welcome p {
+            line-height: 2;
+        }
+
+        .main-button {
+            background: linear-gradient(120deg, #e99bbd, #a99ad9);
+            color: white;
+        }
+
+        .back-button {
+            background: #f1edff;
+            color: #765b91;
+        }
+
+        .dua-text {
+            font-family: 'Amiri', serif;
+            font-size: 24px;
+            line-height: 2.2;
+            margin: 15px 0;
+        }
+
+        .category {
+            color: #8c65a5;
+        }
+
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .letter-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            color: #765b91;
+            border: 1px solid #f0dce9;
+            min-height: 85px;
+        }
+
+        .letter-card span {
+            font-size: 28px;
+        }
+
+        .letter-big {
+            font-family: 'Amiri', serif;
+            font-size: 100px;
+            color: #bd7099;
+        }
+
+        .makharij-image {
+            display: block;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 20px;
+        }
+
+        .douaa-content textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 1px solid #eacbdf;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 17px;
+            resize: vertical;
+        }
+
+        .progress-information {
+            margin: 15px;
+            color: #bd7099;
+        }
+
+        .douaa-section {
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .douaa-content {
+                padding: 10px;
+            }
+
+            .dua-text {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================================= -->
+<!-- HEADER -->
+<!-- ================================= -->
+
+<header class="header">
+
+    <div class="logo">
+        <span>🌙</span>
+        <h1>Noor & Douaa</h1>
+    </div>
+
+    <button id="themeBtn" class="theme-btn" type="button">
+        🌙
+    </button>
+
+</header>
+
+
+<!-- ================================= -->
+<!-- التنقل بين التطبيقين -->
+<!-- ================================= -->
+
+<div class="app-switcher">
+
+    <button type="button" onclick="openNoor()">
+        🌙 Noor | نور قلبي
+    </button>
+
+    <button type="button" onclick="openDouaa()">
+        🌸 Douaa | دعاء
+    </button>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- NOOR APP -->
+<!-- ================================= -->
+
+<div id="home" class="main-section active">
+
+    <!-- Noor navigation -->
+
+    <nav class="navbar">
+        <a href="#noorHome">الرئيسية</a>
+        <a href="#prayerTimes">أوقات الصلاة</a>
+        <a href="#quran">القرآن الكريم</a>
+        <a href="#surahIndex">فهرس السور</a>
+        <a href="#adhkar">الأذكار</a>
+        <a href="#tasbih">التسبيح</a>
+        <a href="#favorites">المفضلة</a>
+        <a href="#dailyTracker">إنجازاتي</a>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section id="noorHome" class="home">
+
+        <div class="hero-content">
+
+            <p class="welcome">
+                مرحباً بك في عالم القرآن الكريم
+            </p>
+
+            <h2>نورٌ يضيء قلبك ✨</h2>
+
+            <p>
+                اقرئي القرآن، اذكري الله، واجعلي كل يوم مليئاً بالطمأنينة.
+            </p>
+
+            <a href="#quran" class="main-btn">
+                ابدئي القراءة 📖
+            </a>
+
+        </div>
+
+        <div class="home-cards">
+
+            <div class="home-card">
+                <span>📖</span>
+                <h3>آخر قراءة</h3>
+                <p id="lastSurah">لم تبدئي القراءة بعد</p>
+
+                <button type="button" onclick="continueReading()">
+                    متابعة القراءة
+                </button>
+            </div>
+
+            <div class="home-card">
+                <span>⭐</span>
+                <h3>المفضلة</h3>
+                <p id="favoriteCount">0</p>
+                <a href="#favorites">عرض المفضلة</a>
+            </div>
+
+        </div>
+
+        <div class="daily-verse">
+            <h2>🌷 آية اليوم</h2>
+            <p id="dailyVerse">جاري تحميل آية اليوم...</p>
+        </div>
+
+    </section>
+
+
+    <!-- PRAYER TIMES -->
+
+    <section id="prayerTimes" class="section">
+
+        <h2 class="section-title">🕌 أوقات الصلاة</h2>
+
+        <p class="section-description">
+            أوقات الصلاة في تونس 🇹🇳
+        </p>
+
+        <div class="prayer-box">
+
+            <h3>🌙 تونس العاصمة</h3>
+
+            <p id="prayerDate">جاري تحميل التاريخ...</p>
+
+            <div id="prayerLoading">
+                جاري تحميل أوقات الصلاة...
+            </div>
+
+            <div id="prayerList" class="prayer-list"></div>
+
+            <div class="next-prayer-box">
+                <h3 id="nextPrayerName">الصلاة القادمة</h3>
+                <p id="nextPrayerCountdown">جاري الحساب...</p>
+            </div>
+
+            <div class="prayer-settings">
+
+                <label>
+                    <input type="checkbox" id="adhanEnabled" checked>
+                    🔊 تشغيل الأذان
+                </label>
+
+                <label>
+                    <input type="checkbox" id="notificationsEnabled" checked>
+                    🔔 تفعيل التنبيهات
+                </label>
+
+                <button type="button" id="enablePrayerNotifications">
+                    تفعيل إشعارات المتصفح
+                </button>
+
+                <button type="button" id="stopAdhan">
+                    ⏹️ إيقاف الأذان
+                </button>
+
+            </div>
+
+            <p id="prayerMessage">
+                🤍 لا تنسي صلاتك، فهي راحة لقلبك.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- QURAN -->
+
+    <section id="quran" class="section">
+
+        <h2 class="section-title">📖 القرآن الكريم</h2>
+
+        <p class="section-description">
+            اقرئي القرآن الكريم وتدبّري آياته.
+        </p>
+
+
+        <!-- MUSHAF -->
+
+        <div class="mushaf-viewer">
+
+            <h2>🌙 المصحف الشريف</h2>
+
+            <p>
+                تصفّحي صفحات المصحف من الفاتحة إلى الناس.
+            </p>
+
+            <div class="page-controls">
+
+                <button type="button" onclick="previousMushafPage()">
+                    ❮ الصفحة السابقة
+                </button>
+
+                <div class="page-number">
+
+                    <label for="mushafPageNumber">
+                        رقم الصفحة:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="mushafPageNumber"
+                        min="1"
+                        max="604"
+                        value="1"
+                        onchange="goToMushafPage()"
+                    >
+
+                    <span>/ 604</span>
+
+                </div>
+
+                <button type="button" onclick="nextMushafPage()">
+                    الصفحة التالية ❯
+                </button>
+
+            </div>
+
+            <div class="mushaf-page-container">
+
+                <img
+                    id="mushafPageImage"
+                    src="https://api.islamic.app/v1/mushaf/page/1.svg"
+                    alt="صفحة المصحف الشريف"
+                    loading="eager"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchSurah"
+                placeholder="ابحثي عن سورة..."
+            >
+
+        </div>
+
+
+        <!-- SURAH INDEX -->
+
+        <div id="surahIndex" class="surah-section">
+
+            <h3>🌸 فهرس السور</h3>
+
+            <div id="surahList" class="surah-list">
+                جاري تحميل السور...
+            </div>
+
+        </div>
+
+
+        <!-- JUZ -->
+
+        <div class="juz-section">
+
+            <h3>📚 أجزاء القرآن الكريم</h3>
+
+            <div class="juz-grid">
+                <script>
+                    for (let i = 1; i <= 30; i++) {
+                        document.write(
+                            `<button type="button" onclick="loadJuz(${i})">الجزء ${i}</button>`
+                        );
+                    }
+                </script>
+            </div>
+
+        </div>
+
+
+        <!-- HIZB -->
+
+        <div class="hizb-section">
+
+            <h3>🌿 أحزاب القرآن الكريم</h3>
+
+            <div class="hizb-grid">
+                <script>
+                    for (let i = 1; i <= 60; i++) {
+                        document.write(
+                            `<button type="button" onclick="loadHizb(${i})">الحزب ${i}</button>`
+                        );
+                    }
+                </script>
+            </div>
+
+        </div>
+
+
+        <!-- QURAN READER -->
+
+        <div id="reader" class="reader">
+
+            <h3 id="surahTitle">
+                اختاري سورة للقراءة 🌷
+            </h3>
+
+            <div id="verses" class="verses"></div>
+
+            <div class="audio-controls">
+
+                <label for="repeatCount">
+                    عدد مرات التكرار:
+                </label>
+
+                <select id="repeatCount">
+                    <option value="1">مرة واحدة</option>
+                    <option value="2">مرتين</option>
+                    <option value="3">3 مرات</option>
+                    <option value="5">5 مرات</option>
+                    <option value="10">10 مرات</option>
+                </select>
+
+                <button type="button" id="playVerse">
+                    ▶️ تشغيل التلاوة
+                </button>
+
+                <button type="button" id="stopAudio">
+                    ⏹️ إيقاف
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADHKAR -->
+
+    <section id="adhkar" class="section">
+
+        <h2 class="section-title">🤍 الأذكار</h2>
+
+        <p class="section-description">
+            اجعلي لسانك رطباً بذكر الله.
+        </p>
+
+        <div class="adhkar-buttons">
+
+            <button type="button" onclick="showAdhkar('morning')">
+                🌅 أذكار الصباح
+            </button>
+
+            <button type="button" onclick="showAdhkar('evening')">
+                🌇 أذكار المساء
+            </button>
+
+            <button type="button" onclick="showAdhkar('sleep')">
+                🌙 أذكار النوم
+            </button>
+
+            <button type="button" onclick="showAdhkar('wake')">
+                ☀️ أذكار الاستيقاظ
+            </button>
+
+        </div>
+
+        <div id="adhkarContent" class="adhkar-content">
+            اختاري نوع الأذكار لعرضها.
+        </div>
+
+    </section>
+
+
+    <!-- TASBIH -->
+
+    <section id="tasbih" class="section">
+
+        <h2 class="section-title">📿 المسبحة الإلكترونية</h2>
+
+        <div class="tasbih-box">
+
+            <p id="tasbihText">سبحان الله</p>
+
+            <div id="counter" class="counter">0</div>
+
+            <button type="button" id="countBtn">
+                سبّحي 🤍
+            </button>
+
+            <button type="button" id="resetBtn">
+                إعادة العداد
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAVORITES -->
+
+    <section id="favorites" class="section">
+
+        <h2 class="section-title">⭐ الآيات المفضلة</h2>
+
+        <p class="section-description">
+            هنا تجدين الآيات التي أضفتِها إلى مفضلتك.
+        </p>
+
+        <div id="favoritesList" class="favorites-list">
+            لا توجد آيات مفضلة حالياً.
+        </div>
+
+    </section>
+
+
+    <!-- DAILY TRACKER -->
+
+    <section id="dailyTracker" class="section">
+
+        <h2 class="section-title">🌸 إنجازاتي اليومية</h2>
+
+        <p class="section-description">
+            خطوات صغيرة كل يوم تقرّبك من الله.
+        </p>
+
+        <div class="tracker">
+
+            <label class="daily-task">
+                <input type="checkbox" data-task="quran">
+                قراءة القرآن الكريم 📖
+            </label>
+
+            <label class="daily-task">
+                <input type="checkbox" data-task="morning">
+                أذكار الصباح 🌅
+            </label>
+
+            <label class="daily-task">
+                <input type="checkbox" data-task="evening">
+                أذكار المساء 🌇
+            </label>
+
+            <label class="daily-task">
+                <input type="checkbox" data-task="tasbih">
+                التسبيح والاستغفار 📿
+            </label>
+
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+
+            <p id="progressText">
+                إنجازك اليومي: 0%
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <div id="completionMessage" class="completion-message"></div>
+
+
+    <!-- NOOR FOOTER -->
+
+    <footer class="footer">
+        <h2>🌙 Noor | نور قلبي</h2>
+        <p>اللهم اجعل القرآن ربيع قلوبنا ونور صدورنا.</p>
+    </footer>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- DOUAA APP -->
+<!-- ================================= -->
+
+<div id="douaa" class="main-section">
+
+    <section class="section">
+
+        <h2 class="section-title">🌸 Douaa | دعاء</h2>
+
+        <p class="section-description">
+            مساحتك الصغيرة للذكر والطمأنينة 🤍
+        </p>
+
+        <div class="douaa-navigation">
+
+            <button type="button"
+                onclick="DouaaApp.showWelcome()">
+                🏡 الرئيسية
+            </button>
+
+            <button type="button"
+                onclick="DouaaApp.showSection('duas')">
+                🤲 الأدعية
+            </button>
+
+            <button type="button"
+                onclick="DouaaApp.showSection('athkar')">
+                🌙 الأذكار
+            </button>
+
+            <button type="button"
+                onclick="DouaaApp.showSection('letters')">
+                🔤 الحروف ومخارجها
+            </button>
+
+            <button type="button"
+                onclick="DouaaApp.showSection('tajweed')">
+                📖 التجويد
+            </button>
+
+            <button type="button"
+                onclick="DouaaApp.showSection('daily')">
+                📝 وردي اليومي
+            </button>
+
+            <button type="button"
+                onclick="DouaaApp.showSection('favorites')">
+                💗 المفضلة
+            </button>
+
+        </div>
+
+        <div id="douaaContent" class="douaa-content" aria-live="polite">
+
+            <div class="douaa-welcome">
+                <div class="welcome-icon">🌸</div>
+                <h2>أهلاً بكِ في Douaa</h2>
+                <p>مساحتك الصغيرة للذكر والطمأنينة 🤍</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <h2>🌸 Douaa | دعاء</h2>
+        <p>اللهم اجعل قلوبنا عامرة بذكرك.</p>
+        <p>Douaa © 2026</p>
+    </footer>
+
+</div>
+
+
+<!-- ================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================= -->
+
+<script src="noor.js" defer></script>
+
+</body>
+</html>
